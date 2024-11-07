@@ -65,8 +65,9 @@ class Server:
             retval["next_page"] = page + 1
         except IndexError:
             retval["next_page"] = None
-        retval["prev_page"] = start_index - page_size
-        if retval["prev_page"] < 0:
+        if (start_index - page_size) > 0:
+            retval["prev_page"] = page - 1
+        else:
             retval["prev_page"] = None
         retval["total_pages"] = len(self.__dataset) // page_size
         return retval
