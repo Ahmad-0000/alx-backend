@@ -61,7 +61,7 @@ class Server:
         retval["page"] = page
         retval["data"] = current_page
         try:
-            self.__dataset[start_index + page]
+            self.__dataset[start_index + page_size]
             retval["next_page"] = page + 1
         except IndexError:
             retval["next_page"] = None
