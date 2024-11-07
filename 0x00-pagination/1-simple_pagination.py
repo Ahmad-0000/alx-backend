@@ -45,6 +45,6 @@ class Server:
         try:
             self.__dataset[end_index]
             self.__dataset[start_index]
-            return self.__dataset[start_index, end_index]
+            return self.__dataset[start_index:end_index]
         except IndexError:
             return []
