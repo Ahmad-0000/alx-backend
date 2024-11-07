@@ -35,12 +35,15 @@ class Server:
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         """Getting a page"""
+        assert type(page) is int
+        assert type(page_size) is int
         assert page > 0
         assert page_size > 0
         if self.__dataset is None:
             self.dataset()
         start_index, end_index = index_range(page, page_size)
         try:
-            return self.__dataset[start_index:end_index]
+            self.__dataset[end_index]
+            self.__dataset[start_index]
         except IndexError:
             return []
