@@ -2,10 +2,10 @@
 """
 FIFO Cache
 """
-from basic_caching import BasicCaching
+from base_caching import BaseCaching
 
 
-class FIFOCache(BasicCaching):
+class FIFOCache(BaseCaching):
     """FIFO Caching class"""
     def __init__(self):
         """Initializing an object"""
