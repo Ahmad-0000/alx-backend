@@ -16,7 +16,7 @@ class FIFOCache(BaseCaching):
         """Caching data"""
         if not key or not item:
             return
-        if len(self.caching_queue) > BasicCaching.MAX_ITEMS:
+        if len(self.caching_queue) > BaseCaching.MAX_ITEMS:
             deleted = self.caching_queue[0]
             del self.caching_queue[0]
         self.caching_queue.append(key)
