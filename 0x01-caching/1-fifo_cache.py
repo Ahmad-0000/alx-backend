@@ -5,7 +5,7 @@ FIFO Cache
 from basic_caching import BasicCaching
 
 
-def FIFOCache(BasicCaching):
+class FIFOCache(BasicCaching):
     """FIFO Caching class"""
     def __init__(self):
         """Initializing an object"""
