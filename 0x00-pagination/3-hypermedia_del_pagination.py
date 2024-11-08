@@ -43,11 +43,21 @@ class Server:
         """Returns a dictionary
         """
         assert index >= 0
-        dataset = list(self.indexed_dataset().values())
+        dataset = self.indexed_dataset()
         assert index < len(dataset)
         retval = {}
+        data = []
+        i = 0
+        temp = index
+        while i < (page_size + 1):
+            if dataset.get(temp):
+                data.append((temp, dataset[temp]))
+                i += 1
+                temp += 1
+            else:
+                temp += 1
         retval["index"] = index
-        retval["data"] = dataset[index:index + page_size]
+        retval["data"] = [_[1] for _ in data][:-1]
         retval["page_size"] = page_size
-        retval["next_index"] = index + page_size
+        retval["next_index"] = data[-1][0]
         return retval
