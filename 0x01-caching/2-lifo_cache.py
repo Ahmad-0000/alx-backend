@@ -18,7 +18,7 @@ class LIFOCache(BaseCaching):
             return
         if len(self.caching_stack) == BaseCaching.MAX_ITEMS:
             deleted = self.caching_stack.pop()
-            del self.cach_data[deleted]
+            del self.cache_data[deleted]
             print(f"DISCARD: {deleted}")
         self.caching_stack.append(key)
         self.cache_data[key] = item
