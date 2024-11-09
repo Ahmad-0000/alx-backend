@@ -16,6 +16,7 @@ class LRUCache(BaseCaching):
         """Caching an item"""
         if not key or not item:
             return
+        self.lru_queue.append(key)
         if len(self.cache_data) == BaseCaching.MAX_ITEMS:
             deleted = self.lru_queue.pop()
             del self.cache_data[deleted]
@@ -24,7 +25,7 @@ class LRUCache(BaseCaching):
 
     def get(self, key):
         """Getting an item from the list"""
-        if key and key in self.lru_queue:
+        if key in self.lru_queue:
             i = self.lru_queue.index(key) + 1
             self.lru_queue.append(key)
             del self.lru_queue[i]
