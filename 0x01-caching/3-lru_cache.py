@@ -21,7 +21,7 @@ class LRUCache(BaseCaching):
             del self.cache_data[deleted]
             print(f"DISCARD: {deleted}")
         self.cache_data[key] = item
-        self.lru_queue.append(key)
+        self.lru_queue.insert(0, key)
 
     def get(self, key):
         """Getting an item from the list"""
