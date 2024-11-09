@@ -9,6 +9,7 @@ def LRUCache(BaseCaching):
     """LRU caching class"""
     def __init__(self):
         """Initializing an object"""
+        super().__init__()
         self.lru_queue = []
 
     def put(self, key, item):
