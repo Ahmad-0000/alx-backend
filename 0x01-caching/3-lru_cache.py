@@ -16,12 +16,12 @@ class LRUCache(BaseCaching):
         """Caching an item"""
         if not key or not item:
             return
-        self.lru_queue.append(key)
         if len(self.cache_data) == BaseCaching.MAX_ITEMS:
             deleted = self.lru_queue.pop()
             del self.cache_data[deleted]
             print(f"DISCARD: {deleted}")
         self.cache_data[key] = item
+        self.lru_queue.append(key)
 
     def get(self, key):
         """Getting an item from the list"""
