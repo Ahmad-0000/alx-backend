@@ -2,7 +2,7 @@
 """
 LRU caching
 """
-from base_caching import BaseCacing
+from base_caching import BaseCaching
 
 
 def LRUCache(BaseCacing):
