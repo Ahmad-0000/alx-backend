@@ -27,6 +27,6 @@ class LRUCache(BaseCaching):
         """Getting an item from the list"""
         if key in self.lru_queue:
             i = self.lru_queue.index(key) + 1
-            self.lru_queue.append(key)
+            self.lru_queue.insert(0, key)
             del self.lru_queue[i]
         return self.cache_data.get(key)
