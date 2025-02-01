@@ -6,11 +6,9 @@ client.on('error', (error) => console.log(`Redis client not connected to the ser
 
 client.subscribe('ALX channel');
 client.on('message', (channel, message) => {
+  console.log(message);
   if (message === 'KILL_SERVER') {
-    console.log(message);
     client.unsubscribe('ALX channel');
     client.quit();
-  } else {
-    console.log(message);
   }
 });

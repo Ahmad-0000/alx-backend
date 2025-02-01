@@ -1,6 +1,6 @@
 import { createQueue } from 'kue';
 
-function createPushNotificationJobs(jobs, queue) {
+function createPushNotificationsJobs(jobs, queue) {
   if (!Array.isArray(jobs)) {
     throw new Error('Jobs is not an array');
   }
@@ -25,4 +25,4 @@ function createPushNotificationJobs(jobs, queue) {
   }
 }
 
-export default createPushNotificationJobs;
+export default createPushNotificationsJobs;
